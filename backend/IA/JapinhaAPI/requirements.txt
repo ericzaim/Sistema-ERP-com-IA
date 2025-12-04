@@ -1,0 +1,10 @@
+pydantic
+fastapi
+uvicorn
+psycopg2-binary
+numpy
+pandas
+scikit-learn
+matplotlib
+python-dotenv
+mongoengine
