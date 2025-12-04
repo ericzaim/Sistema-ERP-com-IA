@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Japinha - Design System Japonês Minimalista
+Inspirado na cultura japonesa com preto, branco e vermelho
+Todas as cores em HSL para consistência */
+
+@layer base {
+  :root {
+    /* Core Japanese Color Palette */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --card-hover: 0 0% 96%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    /* Primary - Elegant Black */
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 0 0% 15%;
+
+    /* Secondary - Pure White */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 5%;
+    --secondary-hover: 0 0% 95%;
+
+    /* Japanese Red Accent */
+    --japinha-red: 355 85% 45%;
+    --japinha-red-light: 355 85% 55%;
+    --japinha-red-dark: 355 85% 35%;
+    --japinha-red-foreground: 0 0% 98%;
+    
+    /* Extended Japanese Color Palette */
+    --japanese-red: 0 70% 35%;
+    --japanese-gold: 45 100% 51%;
+    --japanese-black: 0 0% 7%;
+    --japanese-white: 0 0% 98%;
+    --sakura-pink: 350 100% 88%;
+
+    /* Muted Tones */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
+
+    /* Accent */
+    --accent: 355 85% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Destructive */
+    --destructive: 355 85% 45%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders & Inputs */
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 355 85% 45%;
+
+    /* Japanese Design Elements */
+    --radius: 0.375rem;
+    
+    /* Gradients for Japanese aesthetics */
+    --gradient-japinha: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--japinha-red)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-red: linear-gradient(135deg, hsl(var(--japinha-red)), hsl(var(--japinha-red-light)));
+    
+    /* Shadows with Japanese elegance */
+    --shadow-elegant: 0 4px 20px -2px hsl(var(--primary) / 0.1);
+    --shadow-red: 0 4px 20px -2px hsl(var(--japinha-red) / 0.2);
+    --shadow-card: 0 2px 10px -1px hsl(var(--primary) / 0.05);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 5%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 5%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 355 85% 45%;
+  }
+
+  .dark {
+    /* Dark mode para Japinha - elegante e minimalista */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --card-hover: 0 0% 12%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 5%;
+    --primary-hover: 0 0% 90%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 0 0% 18%;
+
+    --japinha-red: 355 85% 55%;
+    --japinha-red-light: 355 85% 65%;
+    --japinha-red-dark: 355 85% 45%;
+    --japinha-red-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 355 85% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 355 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 355 85% 55%;
+    
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 355 85% 55%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 355 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Japanese Typography */
+  .font-japanese {
+    font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+  }
+  
+  /* Japanese Design Elements */
+  .japinha-gradient {
+    background: var(--gradient-japinha);
+  }
+  
+  .japinha-red-gradient {
+    background: var(--gradient-red);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-red {
+    box-shadow: var(--shadow-red);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+}
